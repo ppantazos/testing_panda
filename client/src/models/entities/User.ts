@@ -30,7 +30,7 @@ export interface SetOrgUser{
 
 export interface OrgUsersInfo{
     user_info: User;
-    role: boolean;
+    role: number;
     user_teams_info?: Team[];
     user_jobs_info?: Job[];
 }

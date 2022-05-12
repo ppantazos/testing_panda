@@ -1,10 +1,8 @@
-import { Team2 } from "../../models/entities/Team";
-import { empty_organization2 } from './EmptyOrganization';
+import { Team } from "../../models/entities/Team";
 
-export const empty_team:Team2 = {
-    id: "",
+export const empty_team:Team = {
+    id: 0,
     name: "",
     description: "",
-    organization: empty_organization2,
-    members: []
+    org_id: 0
 }

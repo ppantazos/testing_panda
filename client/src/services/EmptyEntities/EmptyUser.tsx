@@ -1,22 +1,11 @@
-import { User, User2, OrgUsersInfo } from "../../models/entities/User";
+import { User, OrgUsersInfo } from "../../models/entities/User";
 
 export const empty_user:User = {
-    _id: "",
+    id: 0,
     name: "",
     lastname: "",
     email: "",
     password: "",
-    color: ""
-}
-
-export const empty_user2:User2 = {
-    id: "",
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    organizations: [],
-    jobs: [],
     color: ""
 }
 
@@ -30,7 +19,7 @@ export const empty_user2:User2 = {
 
 export const empty_org_user_info:OrgUsersInfo = {
     user_info: empty_user,
-    is_admin: false,
+    role: 1,  // admin
     user_teams_info: [],
     user_jobs_info: []
 }
