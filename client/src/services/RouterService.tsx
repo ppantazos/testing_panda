@@ -1,15 +1,75 @@
 import {RouteConfig} from "react-router-config";
-// import {Redirect} from "react-router-dom";
-// // import DashboardLayout from "../layouts/DashboardLayout";
-// import React, {lazy} from "react";
-// // import AuthLayout from "../layouts/AuthLayout";
+import {Redirect} from "react-router-dom";
+import DashboardLayout from "../layouts/MenuLayouts/index";
+import React, {lazy} from "react";
+import AuthLayout from "../layouts/AuthLayout";
 
-// // const secureRoute = (component: JSX.Element, token?: string): JSX.Element => {
-// //     return !token
-// //         ? <Redirect to="/auth/login"/>
-// //         : component
-// // }
-const getRoutes = ():Array<RouteConfig> =>[]
+// const secureRoute = (component: JSX.Element, token?: string): JSX.Element => {
+//     return !token
+//         ? <Redirect to="/auth/login"/>
+//         : component
+// }
+const getRoutes = ():Array<RouteConfig> =>[
+    {
+        path: "/",
+        exact: true,
+        component: (): JSX.Element => <Redirect to="/overview"/>
+    },
+    {
+        path: "/errors",
+        component: (props: any): JSX.Element => <DashboardLayout {...props} />,
+        routes: [
+            {
+                path: '/errors/401',
+                exact: true,
+                component: lazy(() => import('../views/Errors/Error401'))
+            },
+            {
+                path: '/errors/404',
+                exact: true,
+                component: lazy(() => import('../views/Errors/Error404'))
+            },
+            {
+                path: '/errors/500',
+                exact: true,
+                component: lazy(() => import('../views/Errors/Error500'))
+            }
+        ]
+    },
+    {
+        path: "/auth",
+        component: (props: any): JSX.Element => <AuthLayout {...props} />,
+        routes: [
+            {
+                path: '/auth/login',
+                exact: true,
+                component: lazy(() => import('../views/Auth/Login'))
+            },
+            {
+                path: '/auth/register',
+                exact: true,
+                component: lazy(() => import('../views/Auth/Register'))
+            },
+            {
+                component: (): JSX.Element => <Redirect to="/errors/404"/>
+            }
+        ]
+    },
+    {
+        route: '*',
+        component: (props: any): JSX.Element => <DashboardLayout {...props} />,
+        routes: [
+            {
+                path: "/overview",
+                component: lazy(() => import('../views/overview/Overview'))
+            },
+            {
+                component: (): JSX.Element => <Redirect to="/errors/404"/>
+            }
+        ]    
+    }   
+]
+
 export {
     getRoutes
 }
