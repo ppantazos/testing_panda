@@ -1,0 +1,37 @@
+TODO List:
+- router
+- configuration
+- menu
+- projects
+    - create/edit/delete
+    - settings
+- jobs
+    - create/edit/delete
+    - settings
+- teams
+    - create/edit/delete
+    - settings
+- users
+    - create/edit/delete
+    - settings
+    - view
+- tags
+    - create/edit/delete
+    - settings
+    - search for an awesome view
+- set up project
+    - maintain notice
+    - autoassign/autodelete case to a user
+    - assign manually tests to a user
+- run mechanism
+    - run apo single project, v1
+    - run apo polla projects including tags
+    - schedule a run
+    - run scripts before run.
+    - run scripts after run.
+    - save default run (Develop px) per user me folders kai tags
+- overview  
+- dashboards
+- integrations?
+- adeies set up
+- devops setup
