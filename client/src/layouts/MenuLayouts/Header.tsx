@@ -1,10 +1,9 @@
 import Spin from 'antd/lib/spin';
-import React, { Suspense, useState } from 'react';
+import React, { Suspense } from 'react';
 import { renderRoutes, RouteConfig } from "react-router-config";
-import { LoadingOutlined, MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons"
+import { LoadingOutlined } from "@ant-design/icons"
 import { Layout} from 'antd';
 import './index.css'
-// import SidebarMenu from "./SidebarMenu";
 
 type DashboardLayoutProps = {
     route: RouteConfig
@@ -12,10 +11,6 @@ type DashboardLayoutProps = {
 
 function HeaderMenu(props: DashboardLayoutProps): JSX.Element {
     const {route} = props;
-
-    const [collapsed, setCollapsed] = useState(false)
-
-    const toggle = () => setCollapsed(!collapsed);
 
     const userHasIcon = ():boolean =>{
         return false
@@ -35,10 +30,6 @@ function HeaderMenu(props: DashboardLayoutProps): JSX.Element {
         <Layout style={{minHeight: "100vh"}}>
             <Layout className="site-layout">
                 <Layout.Header className="site-layout-background" style={{padding: 0}}>
-                    {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                        className: 'trigger',
-                        onClick: toggle,
-                    })}
                 <a href={`/user/${getLoggedinUserId()}`}>
                     <img src={getUserIcon()} alt="User Profile"
                          style={{borderRadius: "50%",
