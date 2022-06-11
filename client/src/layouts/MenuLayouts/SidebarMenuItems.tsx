@@ -1,8 +1,12 @@
-import { ApartmentOutlined, BarChartOutlined, CalendarOutlined, CheckSquareFilled, ClusterOutlined, CoffeeOutlined, DashboardFilled, SettingOutlined, TagFilled, UserOutlined } from "@ant-design/icons";
+import { ApartmentOutlined, BarChartOutlined, CalendarOutlined, PlayCircleOutlined, ClusterOutlined, DashboardFilled, SettingOutlined, TagFilled } from "@ant-design/icons";
 import { BackwardFilled } from '@ant-design/icons';
-
 import React from "react";
 
+
+/*
+    fetch Projects
+    fetch user role
+*/
 
 export type MenuItem = {
     title: string,
@@ -10,59 +14,82 @@ export type MenuItem = {
     icon: JSX.Element
 };
 
+export type sidemenuItems = {
+    label: string,
+    href?: string,
+    icon: JSX.Element,
+    has_access: boolean,
+    children?: {
+        label: string,
+        href: string
+    }[]
+}
 
-export const defaultMenuItems: MenuItem[] = [
+export const sideMenuItems: sidemenuItems[] = [
     {
-        title: 'Overview',
+        label: 'Overview',
         href: '/overview',
-        icon: <DashboardFilled/>
+        icon: <DashboardFilled/>,
+        has_access: true
     },
     {
-        title: 'Test Suites',
-        href: '/test-suites',
-        icon: <CheckSquareFilled/>
+        label: 'Projects', 
+        icon: <ApartmentOutlined />,
+        has_access: true,
+        children: [{
+            label: 'Project 1',
+            href: 'TODO/SOMEWHERE'
+        }, {
+            label: 'Project 2',
+            href: 'TODO/SOMEWHERE'
+        }]
     },
     {
-        title: 'Tags',
+        label: 'Run',
+        href: '/run',
+        icon: <PlayCircleOutlined />,
+        has_access: true
+    },
+    {
+        label: 'Tags',
         href: '/tags',
-        icon: <TagFilled/>
+        icon: <TagFilled/>,
+        has_access: true
     },
     {
-        title: 'Users',
-        href: '/users',
-        icon: <UserOutlined />
-    },
-    {
-        title: 'Calendar',
-        href: '/calendar',
-        icon: <CalendarOutlined />
-    },
-    {
-        title: 'Admin',
-        href: '/panel',
-        icon: <SettingOutlined />
-    },
-    {
-        title: 'Jobs',
-        href: '/panel/jobs',
-        icon: <CoffeeOutlined />
-    },
-    {
-        title: 'Teams',
+        label: 'Teams',
         href: '/panel/teams', ///'/panel/jobs',
-        icon: <ClusterOutlined />
+        icon: <ClusterOutlined />,
+        has_access: true
     },
     {
-        title: 'Projects',
-        href: '/projects', 
-        icon: <ApartmentOutlined />
+        label: 'Calendar',
+        href: '/calendar', 
+        icon: <CalendarOutlined />,
+        has_access: true
     },
     {
-        title: 'Dashboard',
+        label: 'Dashboard',
         href: '/dashboards', 
-        icon: <BarChartOutlined />
+        icon: <BarChartOutlined />,
+        has_access: true
+    },
+    {
+        label: 'Admin',
+        icon: <SettingOutlined />,
+        has_access: true,
+        children: [{
+            label: 'Panel',
+            href: '/panel'
+        }, {
+            label: 'Jobs',
+            href: '/panel/jobs'
+        }, {
+            label: 'Users',
+            href: '/panel/users'
+        }]
     }
-];
+]
 
 
 export const projectMenuItems: MenuItem[] = [
