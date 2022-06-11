@@ -2,8 +2,33 @@ TODO List:
 - router
 - configuration
 - menu
+    - side menu
+        - overview
+        - Projects: collapsed
+            - autoi pou exoun permission gia create teams na mporoun na kanoun kai add apo kapou, oi upoloipoi mono view 
+            - perhaps an all projects??
+        - Run 
+        - Tags
+        - Teams
+            - autoi pou exoun permission gia create teams na mporoun na kanoun kai add apo kapou, oi upoloipoi mono view 
+        - Calendar
+            - scheduled runs
+            - 
+        - Dashboard: check gia permission gia na to vlepeis auto
+            - o kathe user tha vlepei dashboard gia to team tou
+        - Admin: collapsed
+            - Users
+            - Jobs
+            - settings
+    - header
+        - user menu, onlick -> dropdown me
+            - user settings
+            - user profile
+            - suntomes diadromes gia notifcaitons ktl p tha einai   mesa sta settings/profile
+            - search general
 - projects
     - create/edit/delete
+        - CANT delete last project
     - settings
 - jobs
     - create/edit/delete
@@ -13,8 +38,9 @@ TODO List:
     - settings
 - users
     - create/edit/delete
-    - settings
-    - view
+    - settings/ 
+    - user profile
+        - personal stats, px failed rate
 - tags
     - create/edit/delete
     - settings
@@ -29,9 +55,31 @@ TODO List:
     - schedule a run
     - run scripts before run.
     - run scripts after run.
+        - 
     - save default run (Develop px) per user me folders kai tags
+    - extra reruns
+        - ta failed na ta gurisei se rerun kai na valei extra run apo auta
+        - set posa reruns theloume na mpoun 
 - overview  
+    - view runs
 - dashboards
-- integrations?
+- integrations
+    - calamari?
+    - github
+    - applitools
+- organization
+    - settings
+        - apo posa failed sunexomena kai meta na vgazei alert
 - adeies set up
 - devops setup
+- prelogin page
+- login page
+- sales page
+- dikigorikes mlkies gia policies?
+- security checks?
+
+- on org creation:
+    - o main user admin
+    - 1 project
+    - 1 team -> 
+    - 1 job -> QA Tester
