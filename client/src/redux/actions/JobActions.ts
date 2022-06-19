@@ -45,7 +45,7 @@ export const createJob = (data:Omit<Job, 'id'>, jobs:Job[]) => (dispatch: AppDis
 
 }
 
-
+// this is not working
 export const updateJob = (new_job:Job, job_list:Job[]) => (dispatch: AppDispatch): Promise<Job[]> => {
     dispatch(fetchStartAction());
     const request: any = axios.put(`/api/job/updateJob`, new_job)    
