@@ -4,7 +4,7 @@ import './index.css'
 import SidebarMenu from "./SidebarMenu";
 import { get_item_from_lcs, set_item_to_lcs} from "../../assets/local_storage/lcs";
 import { LcsKeys } from '../../assets/local_storage/lcs_keys';
-import { cpuUsage } from 'process';
+// import { cpuUsage } from 'process';
 
 function Sidemenu(): JSX.Element {
 
@@ -30,8 +30,7 @@ function Sidemenu(): JSX.Element {
 
     return(
         <Layout.Sider trigger={null} collapsible collapsed={collapsed}>
-            <div className="logo" onClick={toggle}>
-            </div>
+            <div className="logo" onClick={toggle}></div>
             <SidebarMenu/>
         </Layout.Sider>
     )

@@ -25,6 +25,25 @@ export type sidemenuItems = {
     }[]
 }
 
+
+const get_projects_menu = ():{label:string, href:string}[] => {
+    // todo: fetch projects from db!!! Store them in redis
+    // if have permission add create new project
+    
+    let projects = [{
+        label: 'Create New Project',
+        href: '/TODO/SOMEWHERE'
+    },{
+        label: 'Project 1',
+        href: '/TODO/SOMEWHERE'
+    }, {
+        label: 'Project 2',
+        href: '/TODO/SOMEWHERE'
+    }]
+
+    return projects
+}
+
 export const sideMenuItems: sidemenuItems[] = [
     {
         label: 'Overview',
@@ -36,13 +55,7 @@ export const sideMenuItems: sidemenuItems[] = [
         label: 'Projects', 
         icon: <ApartmentOutlined />,
         has_access: true,
-        children: [{
-            label: 'Project 1',
-            href: 'TODO/SOMEWHERE'
-        }, {
-            label: 'Project 2',
-            href: 'TODO/SOMEWHERE'
-        }]
+        children: get_projects_menu()
     },
     {
         label: 'Run',

@@ -62,6 +62,9 @@ const getRoutes = ():Array<RouteConfig> =>[
             {
                 path: "/overview",
                 component: lazy(() => import('../views/overview/Overview'))
+            },{
+                path: "/panel/jobs",
+                component: lazy(() => import('../views/Jobs/jobs'))
             },
             {
                 component: (): JSX.Element => <Redirect to="/errors/404"/>
