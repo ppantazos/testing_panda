@@ -20,12 +20,12 @@ function Teams(): JSX.Element {
     const [visible, setVisible] = useState<boolean>(false);
 
     const [teamPage, setTeamPage] = useState<PageResource<TeamStats>>(createEmptyPage());
-    const [teamStats, setTeamsStats] = useState<PageResource<TeamStats[]>>(createEmptyPage());
+    const [teamsStats, setTeamsStats] = useState<PageResource<TeamStats>>(createEmptyPage());
 
     useEffect(() => {
         dispatch(getTeamStats())
             .then(foundPage => setTeamsStats(foundPage))
-    })
+    }, [])
 
 
     const get_colors_and_data = (team_pie_stats:TeamPieStats) => {
@@ -50,7 +50,7 @@ function Teams(): JSX.Element {
 
         let cardItems:CardItem[] = []
 
-        let teams_stats: TeamStats[] = teamPage.content
+        const teams_stats: TeamStats[] = teamsStats.content
 
         teams_stats.forEach(team_stats=>{
             const pie_data = get_colors_and_data(team_stats);

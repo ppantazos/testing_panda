@@ -5,7 +5,7 @@ import { org_id } from './org';
 import { users } from './users';
 
 // const test_org:number= org_id
-const test_users:User[] = users.content
+// const test_users:User[] = users.content
 
 export const teamStatsData: TeamStats[] = [
     {id: 1,
@@ -13,19 +13,19 @@ export const teamStatsData: TeamStats[] = [
         description: "All QA Members",
         org_id: org_id,
         jobs: [{
-           "job": "Lead QA",
+           "name": "Lead QA",
            "users": 1,
            "color": "#234556"
        },{
-           "job": "Back",
+           "name": "Back",
            "users": 6,
            "color": "#232556"
        },{
-           "job": "Automation Engineer",
+           "name": "Automation Engineer",
            "users": 3,
            "color": "#23f556"
        },{
-           "job": "BA",
+           "name": "BA",
            "users": 5,
            "color": "#2345b6"
        }]
@@ -34,11 +34,11 @@ export const teamStatsData: TeamStats[] = [
         description: "All Dev Members",
         org_id: org_id,
         jobs: [{
-           "job": "Back",
+           "name": "Back",
            "users": 6,
            "color": "#23c356"
        },{
-           "job": "Front",
+           "name": "Front",
            "users": 5,
            "color": "#231d56"
        }]

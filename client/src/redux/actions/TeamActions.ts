@@ -24,13 +24,13 @@ export const getTeams = () => (dispatch: AppDispatch): Promise<PageResource<Team
         })
 }
 
-export const getTeamStats = () => (dispatch: AppDispatch): Promise<PageResource<TeamStats[]>> => {
+export const getTeamStats = () => (dispatch: AppDispatch): Promise<PageResource<TeamStats>> => {
     dispatch(fetchStartAction());
-    let page: PageResource<TeamStats[]> = createEmptyPage()
+    let page: PageResource<TeamStats> = createEmptyPage()
     return Promise.resolve(teamStatsData)
         .then(value => {
             dispatch(fetchSuccessAction());
-            page.content = [];
+            page.content = value;
             return page;
         })
         .catch(reason => {

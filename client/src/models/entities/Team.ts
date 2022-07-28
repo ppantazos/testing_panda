@@ -21,3 +21,4 @@ export interface TeamPieStats {
 }
 export interface TeamStats extends Team, TeamPieStats{
 }
+
