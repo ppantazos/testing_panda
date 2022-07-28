@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Modal, Form, Input } from 'antd';
 import { PageResource } from "../../models/dtos/PageResource";
-import { Team, TeamMembers } from "../../models/entities/Team";
+import { Team, TeamMembers, TeamStats } from "../../models/entities/Team";
 import { AppDispatch } from "../../redux/store";
 import { useDispatch } from "react-redux";
 import { Job } from "../../models/entities/Job";
@@ -17,7 +17,7 @@ import {org_id} from '../../assets/data/org';
 type TeamProps = {
     visible: boolean;
     setVisible: Dispatch<SetStateAction<boolean>>;
-    setTeamPage: Dispatch<SetStateAction<PageResource<Team>>>;
+    setTeamPage: Dispatch<SetStateAction<PageResource<TeamStats>>>;
 }
 export function TeamModal(props: TeamProps):JSX.Element{
     return(<></>)

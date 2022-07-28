@@ -5,14 +5,14 @@ function Pie(colors:string[], chart_data:object[]):JSX.Element{
 
     return (
         <>
-            {/* <VictoryPie
+            <VictoryPie
                 colorScale={colors}
                 data={chart_data}
                 innerRadius={100}
                 animate={{
                     duration: 2000
                   }}
-            /> */}
+            />
         </>
     )
 }

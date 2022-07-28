@@ -12,10 +12,12 @@ export interface TeamMembers{
     members: number[];  // ids of the users
 }
 
-export interface TeamStats extends Team{
+export interface TeamPieStats {
     jobs: {
-        "job": string,
+        "name": string,
         "users": number,
         "color": string
     }[]; 
+}
+export interface TeamStats extends Team, TeamPieStats{
 }

@@ -1,5 +1,5 @@
 export interface CardItem{
-    id: string;
+    id: number;
     link?: string;
     icon: any;
     name: string;
