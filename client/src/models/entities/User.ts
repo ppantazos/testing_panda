@@ -7,7 +7,7 @@ export interface User{
     name: string;
     lastname: string;
     email: string;
-    color: string;
+    color?: string;  // todo: move this to OrgUser
     password?: string;
 }
 

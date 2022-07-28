@@ -67,6 +67,16 @@ const getRoutes = ():Array<RouteConfig> =>[
                 component: lazy(() => import('../views/Jobs/jobs'))
             },
             {
+                path: "/panel/teams",
+                exact: true,
+                component: lazy(() => import('../views/Teams/teams'))
+            },
+            {
+                path: `/panel/team/:teamId/members`,
+                exact: true,
+                component: lazy(() => import('../views/Teams/teamMembers'))
+            },
+            {
                 component: (): JSX.Element => <Redirect to="/errors/404"/>
             }
         ]    

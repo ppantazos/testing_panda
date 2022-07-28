@@ -70,12 +70,6 @@ export const sideMenuItems: sidemenuItems[] = [
         has_access: true
     },
     {
-        label: 'Teams',
-        href: '/panel/teams', ///'/panel/jobs',
-        icon: <ClusterOutlined />,
-        has_access: true
-    },
-    {
         label: 'Calendar',
         href: '/calendar', 
         icon: <CalendarOutlined />,
@@ -100,6 +94,10 @@ export const sideMenuItems: sidemenuItems[] = [
         }, {
             label: 'Users',
             href: '/panel/users'
+        },
+        {
+            label: 'Teams',
+            href: '/panel/teams', ///'/panel/jobs',
         }]
     }
 ]

@@ -6,6 +6,16 @@ export interface Team {
 }
 
 export interface TeamMembers{
-    id: number;
+    team_id: number;
+    org_id: number;
+    member_id: number;
     members: number[];  // ids of the users
+}
+
+export interface TeamStats extends Team{
+    jobs: {
+        "job": string,
+        "users": number,
+        "color": string
+    }[]; 
 }

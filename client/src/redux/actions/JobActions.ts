@@ -4,7 +4,7 @@ import {AppDispatch} from "../store";
 import {fetchErrorAction, fetchStartAction, fetchSuccessAction} from "./creators/CommonActions";
 import { Job } from "../../models/entities/Job";
 
-export const getJobs = (org_id:number|string) => (dispatch: AppDispatch): Promise<PageResource<Job>> => {
+export const getJobs = (org_id:number) => (dispatch: AppDispatch): Promise<PageResource<Job>> => {
     dispatch(fetchStartAction());
 
     const request: any = axios.get(`/api/job/getJobs?org_id=${org_id}`)

@@ -50,7 +50,7 @@ function SidebarMenu(): JSX.Element {
     })
 
     let index = items.findIndex((menuItem) => menuItem.href === location.pathname)
-
+    console.log(index);
     return (
         <Menu 
             theme="dark" 
